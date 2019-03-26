@@ -517,12 +517,18 @@ h2 {
     line-height: 1.2em;
 }
 
+h3 {
+    color: #637588;
+    line-height: 1.2em;
+}
+
 a {
     text-decoration: none;
     color: #ffffff;
 }
 
 p {
+    color: #637588;
     letter-spacing: 1px;
 }
 .container {
@@ -877,13 +883,61 @@ p {
     background-color: #d66926;
 }
 
+.post .container {
+    grid-gap: 20px;
+}
 
+.post-item {
+    transition: all 0.5s;
+    background-color: #f2f2f2;
+}
 
+.post-item:hover {
+    background-color: #d8d8d8;
+}
 
+.post-item:hover .post-item__image div {
+    transform: scale(1.1);
+}
 
+.post-item a {
+    display: grid;
+    height: 100%;
+    overflow: hidden;
+    grid-template-rows: 300px 1fr;
 
+}
 
+.post-item__image {
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 0;
+}
 
+.post-item__image div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: 50% 50%;
+    transition: 0.5s;
+}
+
+.post-item__content {
+    display: grid;
+    padding: 20px;
+    align-content: center;
+}
+
+.post-item__content h3 {
+    text-align: center;
+}
+
+.post-item__content p {
+    text-align: center;
+}
 
 
 
@@ -917,6 +971,18 @@ p {
     }
     .form .container {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .post .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .post h2 {
+        grid-column: 1 / 4 span;
+    }
+    .post-item:nth-of-type(1) {
+        grid-column: 1 / span 2;
+    }
+    .post-item:nth-of-type(6) {
+        grid-column: 3 / span 2;
     }
     
 }
