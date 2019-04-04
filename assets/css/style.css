@@ -883,6 +883,9 @@ p {
     background-color: #d66926;
 }
 
+.post {
+    margin-bottom: 100px;
+}
 .post .container {
     grid-gap: 20px;
 }
@@ -923,6 +926,7 @@ p {
     left: 0;
     background-position: 50% 50%;
     transition: 0.5s;
+    background-size: cover;
 }
 
 .post-item__content {
@@ -939,11 +943,52 @@ p {
     text-align: center;
 }
 
+.footer {
+    background-color: #1b2030;
+    text-align: center;
+    padding: 50px 30px 70px;
+}
 
+.foot-icons {
+    position: relative;
+    display: grid;
+    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    justify-content: center;
+}
 
+.foot-icons a {
+    display: block;
+    padding: 10px;
+}
 
+.footer .fab {
+    font-size: 36px;
+}
 
+.foot-icons a:hover {
+    color: #d66926;
+}
 
+.foot-icons::after {
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 2px;
+    content: "";
+    background-color: #fff;
+    opacity: 0.1;
+}
+
+.footer span:first-of-type {
+    font-weight: 200;
+}
+
+.footer span:last-of-type {
+    font-weight: 700;
+    color: #e5e5e5;
+}
 
 
 
@@ -987,7 +1032,7 @@ p {
     
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) and (min-width:769px){
     h1 {
         font-size: 2.5rem;
     }
@@ -1026,10 +1071,22 @@ p {
     .form .container {
         grid-template-columns: repeat(3, 1fr);
     }
+    .post .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .post-item:nth-of-type(1) {
+        grid-column: 1 / span 2;
+    }
+    .post-item:nth-of-type(4) {
+        grid-column: 2 / span 2;
+    }
+    .post-item:nth-of-type(5) {
+        grid-column: 1 / span 2;
+    }
         
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-height: 452px) {
     .skills {
     grid-template-columns: repeat(2, 1fr);
     }
@@ -1092,14 +1149,23 @@ p {
     .form-item:nth-of-type(1) {
         grid-column: 1 / span 2;
     }
-      
+    .post .container {
+        grid-template-columns: 1fr 1fr; 
+    }
+    .post h2 {
+        margin-bottom: 20px;
+        grid-column: 1 / span 2;
+    }
     
     }
 
 
-@media (min-height: 451px) {
+@media (max-height: 451px) {
     .skill-item {
         min-height: calc(33.33vh - 20px * 0.66);
+    }
+    .post .container {
+        grid-template-columns: 1fr;
     }
 }
 
